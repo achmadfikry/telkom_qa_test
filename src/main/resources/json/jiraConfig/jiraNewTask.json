@@ -1,0 +1,15 @@
+{
+    "fields": {
+       "project":
+       {
+          "key": "ICRM"
+       },
+       "summary": "Automation Failure Task",
+       "assignee": {
+          "name": "Aliridh@mfcgd.com"
+       },
+       "issuetype": {
+          "name": "Task"
+       }
+   }
+}

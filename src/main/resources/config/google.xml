@@ -8,6 +8,9 @@
 	<parameter name="driver.name" value="chromeDriver" /> <!-- chromeDriver,firefoxDriver -->	
 	<parameter name="env.profile" value="UAT" /> <!--DEV / SIT / UAT / REH / PROD -->
 	<parameter name="isAPIOnly" value="false" />
+	<parameter name="extentReport" value="false"/>
+	<parameter name="jiraIntegration" value="false"/>
+	<parameter name="testExecutionKey" value="IDN-2407"/>
 	
     <test name="searchGoogle" enabled="true"> 
         <groups>

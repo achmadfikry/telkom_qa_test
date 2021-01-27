@@ -1,0 +1,14 @@
+{
+  "baseUrl":"https://idn-bff-service-dev.apps.sea.preview.pcf.manulife.com/v1/idn/encrypt/",
+  "endPoint":"",
+  "headers":{
+    "Content-Type":"${contentJson}",
+    "Accept":"application/json"
+  },
+  "method":"${methodJson2}",
+  "query-parameters":"",
+  "body":{
+    "isEncrypt": false,
+    "payload": "${responsePayload}"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "headers":{
+ 	"Content-Type":"application/json",
+  	"Authorization":"U0ZNeHZxNldoWm5NSHpkc0NwQ2kzTUJjWURuSVJSUEc6U1p4dUN6QTdjdlNVU2pzYw"
+  },
+  "endPoint":"",
+  "baseUrl":"https://manulife-operations-preprod-ext.apigee.net/ext/crm2-idn/directquery/service/token?grant_type=client_credentials",
+  "method":"POST",
+  "body":
+  {
+  	"grant_type": "client_credentials"
+  }
+}

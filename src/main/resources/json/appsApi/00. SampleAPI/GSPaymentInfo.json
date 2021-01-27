@@ -1,0 +1,11 @@
+{
+  "headers":{
+    "Content-Type":"application/json",
+    "Authorization":"Bearer ${jwtToken}"
+  },
+  "endPoint":"",
+  "baseUrl":"${urlAPI}/v1/100000050/policies/1927",
+  "method":"GET",
+  "query-parameters":"",
+  "body":""	
+}

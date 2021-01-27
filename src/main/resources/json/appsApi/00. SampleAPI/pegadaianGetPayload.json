@@ -1,0 +1,11 @@
+{
+  "baseUrl":"${urlAPI}",
+  "endPoint":"",
+  "headers":{
+    "Content-Type":"${contentJson}",
+    "Accept":"application/json"
+  },
+  "method":"${methodJson}",
+  "query-parameters":"",
+  "body": ""
+}

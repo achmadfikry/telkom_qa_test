@@ -61,8 +61,9 @@ public class CustomListeners implements ITestListener {
 	private GenLib genLib;
 	public static String systemDir = System.getProperty("user.dir");
 	private Properties jiraConfig_properties;
-	public static final String RESOURCESLOC = systemDir + "scr/main/resources/json/jiraConfig/";
+	public static final String RESOURCESLOC = systemDir + "src/main/resources/json/jiraConfig/";
 	public static String folderName = "";
+	Log logger = LogFactory.getLog(getClass());
 	String url = "";
 	// WebDriver driver;
 
@@ -227,24 +228,24 @@ public class CustomListeners implements ITestListener {
 	public void setUrlWeb(String envProfile) {
 		switch (envProfile.toUpperCase()) {
 		case "DEV":
-			// logger.info("Navigated to DEV env");
+			logger.info("Navigated to DEV env");
 			url = env_properties.getProperty("dev.url");
 			break;
 		case "SIT":
-			// logger.info("Navigated to SIT env");
+			logger.info("Navigated to SIT env");
 			url = env_properties.getProperty("sit.url");
 			break;
 		case "UAT":
-			// logger.info("Navigated to UAT env");
+			logger.info("Navigated to UAT env");
 			url = env_properties.getProperty("uat.url");
 			System.out.println("url = " + url);
 			break;
 		case "REH":
-			// logger.info("Navigated to Rehearsal env");
+			logger.info("Navigated to Rehearsal env");
 			url = env_properties.getProperty("reh.url");
 			break;
 		case "PROD":
-			// logger.info("Navigated to UAT env");
+			logger.info("Navigated to PROD env");
 			url = env_properties.getProperty("prod.url");
 			break;
 		}
@@ -254,27 +255,27 @@ public class CustomListeners implements ITestListener {
 		String urlAPI = "";
 		switch (envProfile.toUpperCase()) {
 		case "DEV":
-			// logger.info("Navigated to DEV env");
+			logger.info("Navigated to DEV env");
 			urlAPI = env_properties.getProperty("dev.url.api");
 			getBundle().setProperty("urlAPI", urlAPI);
 			break;
 		case "SIT":
-			// logger.info("Navigated to SIT env");
+			logger.info("Navigated to SIT env");
 			urlAPI = env_properties.getProperty("sit.url.api");
 			getBundle().setProperty("urlAPI", urlAPI);
 			break;
 		case "UAT":
-			// logger.info("Navigated to UAT env");
+			logger.info("Navigated to UAT env");
 			urlAPI = env_properties.getProperty("uat.url.api");
 			getBundle().setProperty("urlAPI", urlAPI);
 			break;
 		case "REH":
-			// logger.info("Navigated to Rehearsal env");
+			logger.info("Navigated to Rehearsal env");
 			urlAPI = env_properties.getProperty("reh.url.api");
 			getBundle().setProperty("urlAPI", urlAPI);
 			break;
 		case "PROD":
-			// logger.info("Navigated to UAT env");
+			logger.info("Navigated to PROD env");
 			urlAPI = env_properties.getProperty("prod.url.api");
 			getBundle().setProperty("urlAPI", urlAPI);
 			break;
