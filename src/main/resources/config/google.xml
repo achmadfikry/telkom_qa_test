@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="qaf Suite API" verbose="0" parallel="none">
+	<listeners>
+		<listener class-name="com.manulife.listeners.CustomListeners" />
+	</listeners>	
+	
+	<parameter name="dryrun.mode" value="false" />	
+	<parameter name="driver.name" value="chromeDriver" /> <!-- chromeDriver,firefoxDriver -->	
+	<parameter name="env.profile" value="UAT" /> <!--DEV / SIT / UAT / REH / PROD -->
+	<parameter name="isAPIOnly" value="false" />
+	
+    <test name="searchGoogle" enabled="true"> 
+        <groups>
+            <run>
+                <include name="@WebSearch" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+        </classes>
+    </test>
+</suite>
