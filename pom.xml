@@ -137,11 +137,45 @@
 			<version>2.13.3</version>
 		</dependency>
 		
-		<!-- Tambahan Ali -->
+<!-- ============================================================================================================== -->
+		<!-- Add by Ali -->
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
 			<version>2.4.0</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.qmetry/qaf-support-ws -->
+		<dependency>
+			<groupId>com.qmetry</groupId>
+			<artifactId>qaf-support-ws</artifactId>
+			<version>2.1.13</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
+		<dependency>
+			<groupId>com.codoid.products</groupId>
+			<artifactId>fillo</artifactId>
+			<version>1.18</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
 		</dependency>
 	</dependencies>
 </project>

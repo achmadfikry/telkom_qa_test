@@ -1,4 +1,4 @@
-package com.quantum.steps;
+package com.quantum.steps.web;
 
 import java.util.List;
 import java.util.Map;

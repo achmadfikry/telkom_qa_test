@@ -3,6 +3,7 @@ package com.manulife.listeners;
 import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,11 +12,13 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,6 +40,8 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -44,7 +49,9 @@ import org.testng.ITestResult;
 
 import com.manulife.ap.GenLib;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
-
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
@@ -54,10 +61,10 @@ import net.minidev.json.parser.ParseException;
 public class CustomListeners implements ITestListener {
 
 	WebDriver driver = new WebDriverTestBase().getDriver();
-	// public static ExtentReports rep;
+	public static ExtentReports rep;
 	// CommonDriver commonDriver;
 	private Properties env_properties;
-	// public static ExtentTest test;
+	public static ExtentTest test;
 	private GenLib genLib;
 	public static String systemDir = System.getProperty("user.dir");
 	private Properties jiraConfig_properties;
@@ -73,12 +80,25 @@ public class CustomListeners implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
+		boolean extentReport = Boolean.parseBoolean(result.getMethod().getXmlTest().getParameter("extentReport"));
+		
+		if(extentReport) {
+			rep = GenLib.getInstance();
+			test = rep.startTest(result.getName().toUpperCase());
+		}
 
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
+		boolean extentReport = Boolean.parseBoolean(result.getMethod().getXmlTest().getParameter("extentReport"));
+		
+		if(extentReport) {
+			test.log(LogStatus.PASS, result.getName().toUpperCase() + " PASS");
+			rep.endTest(test);
+			rep.flush();
+		}
+		
 		// Jira integrate - begin
 		try {
 			jiraConfig_properties = genLib.getPropertyFile("jiraConfig.properties");
@@ -119,7 +139,38 @@ public class CustomListeners implements ITestListener {
 	}
 
 	@Override
-	public void onTestFailure(ITestResult result) {
+	public void onTestFailure(ITestResult result) {	
+		boolean extentReport = Boolean.parseBoolean(result.getMethod().getXmlTest().getParameter("extentReport"));
+		
+		// extent Report
+		if(extentReport) {
+			test.log(LogStatus.FAIL, result.getName().toUpperCase() + " FAILED TESTING");
+			rep.endTest(test);
+			rep.flush();
+	
+			Date d = new Date();
+			String screenshotName = d.toString().replace(":", "_").replace(" ", "_");
+			/*try {
+				genObjGui.takeScreenshotForExtentReport(screenshotName);
+			} catch (Throwable e) {
+				e.printStackTrace();
+			}*/
+			
+			try {
+				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				String currentDir = System.getProperty("user.dir");
+				FileUtils.copyFile(scrFile,new File(currentDir + "/target/surefire-reports/" +folderName+"/"+screenshotName+".png"));
+			
+				CustomListeners.test.log(LogStatus.PASS, screenshotName);
+				CustomListeners.test.log(LogStatus.PASS, CustomListeners.test.addScreenCapture(screenshotName+".png"));
+			} catch (IOException e) {
+				logger.error(e.getMessage());
+			}
+	
+			test.log(LogStatus.FAIL, result.getName().toUpperCase() + " Failed with exception : " + result.getThrowable());
+			test.log(LogStatus.FAIL, test.addScreenCapture(screenshotName + ".png"));
+		}
+		
 		// Jira Integrate - Start
 		try {
 			jiraConfig_properties = genLib.getPropertyFile("jiraConfig.properties");
@@ -180,7 +231,13 @@ public class CustomListeners implements ITestListener {
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
+		boolean extentReport = Boolean.parseBoolean(result.getMethod().getXmlTest().getParameter("extentReport"));
+		
+		if(extentReport) {
+			test.log(LogStatus.SKIP, result.getName().toUpperCase() + " Skipped the test as the Run mode is NO");
+			rep.endTest(test);
+			rep.flush();
+		}
 
 	}
 
@@ -192,13 +249,14 @@ public class CustomListeners implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-		// boolean extentReport =
-		// Boolean.parseBoolean(context.getCurrentXmlTest().getParameter("extentReport"));
+		boolean extentReport = Boolean.parseBoolean(context.getCurrentXmlTest().getParameter("extentReport"));
 		boolean isAPIOnly = Boolean.parseBoolean(context.getCurrentXmlTest().getParameter("isAPIOnly"));
-		/*
-		 * if(extentReport) { String suiteName =
-		 * context.getCurrentXmlTest().getSuite().getName(); folderName = suiteName; }
-		 */
+		
+		if(extentReport) { 
+			String suiteName = context.getCurrentXmlTest().getSuite().getName(); 
+			folderName = suiteName; 
+		}
+		 
 
 		try {
 			env_properties = genLib.getPropertyFile("Environment.properties");
