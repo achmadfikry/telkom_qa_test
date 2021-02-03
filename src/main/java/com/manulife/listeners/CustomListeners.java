@@ -60,7 +60,7 @@ import net.minidev.json.parser.ParseException;
 
 public class CustomListeners implements ITestListener {
 
-	WebDriver driver = new WebDriverTestBase().getDriver();
+	WebDriver driver;
 	public static ExtentReports rep;
 	// CommonDriver commonDriver;
 	private Properties env_properties;
@@ -269,6 +269,7 @@ public class CustomListeners implements ITestListener {
 		if (isAPIOnly) {
 			setUrlAPI(envProfile);
 		} else {
+			driver = new WebDriverTestBase().getDriver();
 			setUrlWeb(envProfile);
 			setUrlAPI(envProfile);
 			driver.manage().deleteAllCookies();
