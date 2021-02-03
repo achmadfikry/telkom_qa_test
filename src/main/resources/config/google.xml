@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="qaf Suite API" verbose="0" parallel="none">
 	<listeners>
-		<listener class-name="com.manulife.listeners.CustomListeners" />
+		<listener class-name="com.custom.listeners.CustomListeners" />
 	</listeners>	
 	
+	<parameter name="scenario.file.loc" value="src/main/resources/scenarios/webSearch.feature" />
 	<parameter name="dryrun.mode" value="false" />	
 	<parameter name="driver.name" value="chromeDriver" /> <!-- chromeDriver,firefoxDriver -->	
 	<parameter name="env.profile" value="UAT" /> <!--DEV / SIT / UAT / REH / PROD -->

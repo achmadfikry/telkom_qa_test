@@ -1,4 +1,4 @@
-package com.manulife.ap;
+package com.custom.ap;
 
 import java.sql.Timestamp;
 import java.text.NumberFormat;

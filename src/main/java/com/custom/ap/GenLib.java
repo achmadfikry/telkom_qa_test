@@ -1,4 +1,4 @@
-package com.manulife.ap;
+package com.custom.ap;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import com.manulife.listeners.CustomListeners;
+import com.custom.listeners.CustomListeners;
 import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
 

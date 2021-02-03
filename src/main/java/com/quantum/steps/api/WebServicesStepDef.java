@@ -18,13 +18,13 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
 
+import com.custom.ap.GenLib;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.jayway.jsonpath.JsonPath;
-import com.manulife.ap.GenLib;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.rest.RestRequestBean;
 import com.qmetry.qaf.automation.step.QAFTestStep;

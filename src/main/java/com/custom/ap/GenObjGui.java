@@ -1,4 +1,4 @@
-package com.manulife.ap;
+package com.custom.ap;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.custom.listeners.CustomListeners;
 //import com.manulife.listeners.CustomListeners;
 import com.qmetry.qaf.automation.core.QAFTestBase;
 import com.qmetry.qaf.automation.ui.WebDriverBaseTestPage;
@@ -25,6 +26,7 @@ import com.qmetry.qaf.automation.ui.api.PageLocator;
 import com.qmetry.qaf.automation.ui.api.WebDriverTestPage;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 //import com.relevantcodes.extentreports.LogStatus;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class GenObjGui extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
@@ -167,7 +169,7 @@ public class GenObjGui extends WebDriverBaseTestPage<WebDriverTestPage> {
 		}
 	}
 	
-	/*public void takeScreenshotForExtentReport(String comment) throws Throwable {
+	public void takeScreenshotForExtentReport(String comment) throws Throwable {
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			String currentDir = System.getProperty("user.dir");
@@ -179,11 +181,11 @@ public class GenObjGui extends WebDriverBaseTestPage<WebDriverTestPage> {
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		}
-	}*/
+	}
 	
-	/*public void setCommentIntoExtentReport(LogStatus logStatus, String comment) throws Throwable {
+	public void setCommentIntoExtentReport(LogStatus logStatus, String comment) throws Throwable {
 		CustomListeners.test.log(logStatus, comment);
-	}*/
+	}
 	
 	public void deleteAllCookies() throws Throwable {
 		browser.manage().deleteAllCookies();

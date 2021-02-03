@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.manulife.ap.OracleConnection;
+import com.custom.ap.OracleConnection;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
 public class OracleDBQueryStepDef extends OracleConnection {

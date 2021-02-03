@@ -3,7 +3,7 @@ package com.quantum.pages;
 
 import java.util.List;
 
-import com.manulife.ap.GenObjGui;
+import com.custom.ap.GenObjGui;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.ui.WebDriverBaseTestPage;
 import com.qmetry.qaf.automation.ui.annotations.FindBy;

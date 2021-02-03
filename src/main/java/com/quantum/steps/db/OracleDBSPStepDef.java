@@ -9,8 +9,8 @@ import java.sql.Types;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.manulife.ap.OracleConnection;
-import com.manulife.ap.Parsing;
+import com.custom.ap.OracleConnection;
+import com.custom.ap.Parsing;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
 import oracle.jdbc.OracleTypes;

@@ -1,4 +1,4 @@
-package com.manulife.ap;
+package com.custom.ap;
 
 import com.qmetry.qaf.automation.ui.WebDriverBaseTestPage;
 import com.qmetry.qaf.automation.ui.api.PageLocator;

@@ -1,4 +1,4 @@
-package com.manulife.listeners;
+package com.custom.listeners;
 
 import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
 
@@ -47,7 +47,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.manulife.ap.GenLib;
+import com.custom.ap.GenLib;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
