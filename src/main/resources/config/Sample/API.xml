@@ -1,14 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="qaf Suite API" verbose="0" parallel="none">
-	<parameter name="step.provider.pkg" value="com.manulife.steps" />
 	<listeners>
-		<listener class-name="com.manulife.listeners.CustomListeners" />
-	</listeners>
+		<listener class-name="com.custom.listeners.CustomListeners" />
+	</listeners>	
 	
-	<parameter name="scenario.file.loc" value="scenarios/api.feature" />	
+	<parameter name="scenario.file.loc" value="src/main/resources/scenarios" />
 	<parameter name="dryrun.mode" value="false" />	
-	<parameter name="driver.name" value="chromeDriver" /> <!-- chromeDriver,firefoxDriver -->		
-	<parameter name="env.profile" value="UAT" /> <!--DEV / SIT / UAT / REH / PROD -->	
+	<parameter name="driver.name" value="chromeDriver" /> <!-- chromeDriver,firefoxDriver -->	
+	<parameter name="env.profile" value="REH" /> <!--DEV / SIT / UAT / REH / PROD -->
 	<parameter name="isAPIOnly" value="true" />
 	<parameter name="extentReport" value="false"/>
 	<parameter name="jiraIntegration" value="false"/>
@@ -17,7 +16,7 @@
     <test name="withoutToken" enabled="true"> 
         <groups>
             <run>
-                <include name="@HandleJsonStringinsideJsonValue" />
+                <include name="@withoutTokenApiOnlywithTestData" />
             </run>
         </groups>
         <classes>
