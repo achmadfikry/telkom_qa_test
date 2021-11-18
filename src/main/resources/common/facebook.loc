@@ -1,0 +1,18 @@
+
+facebook.fbbtncreatenewaccount=xpath=/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[5]/a
+facebook.fbinputfirstname = {\"locator\":\"name=firstname\",\"desc\":\"First Name\"}
+facebook.fbinputsurname = {\"locator\":\"name=lastname\",\"desc\":\"First Name\"}
+facebook.fbinputnumberemail = {\"locator\":\"name=reg_email__\",\"desc\":\"Last Name\"}
+facebook.fbinputnewpass = {\"locator\":\"name=reg_passwd__\",\"desc\":\"New Password\"}
+facebook.fbinputdobdate = {\"locator\":\"name=birthday_day\",\"desc\":\"Date of Birth\"}
+facebook.fbinputdobmonth = {\"locator\":\"name=birthday_month\",\"desc\":\"Month of Birth\"}
+facebook.fbinputdobyear = {\"locator\":\"name=birthday_year\",\"desc\":\"Year of Birth\"}
+facebook.fboptiongenderfemale=xpath=/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[1]/label
+facebook.fboptiongendermale=xpath=/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[2]/label
+facebook.fboptiongendercustom=xpath=/html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[3]/label
+facebook.fboptiongendercustomselect = {\"locator\":\"name=preferred_pronoun\",\"desc\":\"Select Your Pronoun\"}
+facebook.fbinputgendercustom = {\"locator\":\"name=custom_gender\",\"desc\":\"Input Gender (Optional)\"}
+facebook.fbbtnsignup = {\"locator\":\"name=websubmit\",\"desc\":\"Button Sign Up\"}
+facebook.fbbtncontinueregist=xpath=//*[@id="scrollview"]/div/div/div[2]/div/div/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div
+facebook.fbbtnupdatecontactinfo=xpath=/html/body/div[1]/div[1]/div[1]/div/div/div[1]/div[2]/form/div[2]/div/a
+facebook.fbbtnconfirmcontinue = {\"locator\":\"name=confirm\",\"desc\":\"Continue\"}

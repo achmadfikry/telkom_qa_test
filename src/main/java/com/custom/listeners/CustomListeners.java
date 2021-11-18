@@ -307,6 +307,10 @@ public class CustomListeners implements ITestListener {
 			logger.info("Navigated to PROD env");
 			url = env_properties.getProperty("prod.url");
 			break;
+		case "FACEBOOK":
+			logger.info("Navigated to FACEBOOK");
+			url = env_properties.getProperty("facebook.url");
+			break;
 		}
 	}
 

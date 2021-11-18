@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">		
+<suite name="facebook" verbose="0" parallel="none">		
+	<listeners>	
+		<listener class-name="com.custom.listeners.CustomListeners"/>
+	</listeners>	
+	<parameter name="scenario.file.loc" value="src/main/resources/scenarios/Facebook/facebook.feature" />	
+	<parameter name="dryrun.mode" value="false" />	
+	<parameter name="driver.name" value="chromeDriver" /> <!-- chromeDriver,firefoxDriver -->	
+	<parameter name="env.profile" value="FACEBOOK" /> <!--DEV / SIT / UAT / REH / PROD -->	
+	<parameter name="isAPIOnly" value="false" />	
+	<parameter name="extentReport" value="false"/>	
+	<parameter name="jiraIntegration" value="false"/>	
+	<parameter name="testExecutionKey" value="IDN-2409"/>	
+		
+		 
+	<test name="TC_001" enabled = "true">	
+		<groups>
+            <run>		
+                <include name="@TC_001" /> 		
+            </run>		
+        </groups>		
+        <classes>		
+            <class name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />		
+        </classes>		
+	</test>	
+
+				
+	
+		
+</suite>		
