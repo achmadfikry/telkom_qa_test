@@ -311,6 +311,10 @@ public class CustomListeners implements ITestListener {
 			logger.info("Navigated to FACEBOOK");
 			url = env_properties.getProperty("facebook.url");
 			break;
+		case "MIDTRANS":
+			logger.info("Navigated to MIDTRANS");
+			url = env_properties.getProperty("demo.midtrans.url");
+			break;
 		}
 	}
 

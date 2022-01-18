@@ -1,0 +1,17 @@
+
+midtrans.frameordersummary=xpath=//*[@id="snap-midtrans"]
+
+midtrans.buynow=xpath=//*[@id="container"]/div/div/div[1]/div[2]/div/div[1]/a
+midtrans.checkoutshoppingchart=xpath=//*[@id="container"]/div/div/div[2]/div[2]/div[1]
+midtrans.continuecocostore=xpath=//*[@id="application"]/div[1]/a
+midtrans.atmbanktransfer=xpath=//*[@id="payment-list"]/div[2]/a
+
+midtrans.atmbanktransferbca=xpath=//*[@id="bank-transfer-list"]/div[1]/a
+midtrans.atmbanktransfermandiri=xpath=//*[@id="bank-transfer-list"]/div[2]/a
+midtrans.atmbanktransferbni=xpath=//*[@id="bank-transfer-list"]/div[3]/a
+midtrans.atmbanktransferpermata=xpath=//*[@id="bank-transfer-list"]/div[4]/a
+midtrans.atmbanktransferbri=xpath=//*[@id="bank-transfer-list"]/div[4]/a
+
+midtrans.seeacctnumberatm=xpath=//*[@id="application"]/div[1]/a
+midtrans.completepaymentatm=xpath=//*[@id="application"]/div[1]/a
+midtrans.bookingnotification=xpath=//*[@id="container"]/div/div/div[1]/div[2]/div/div[2]/div
